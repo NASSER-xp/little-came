@@ -13,7 +13,6 @@ config_version=5
 config/name="platform game"
 run/main_scene="uid://crcuqo2w1qumf"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
 
 [display]
 
