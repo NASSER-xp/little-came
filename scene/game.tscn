@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://crcuqo2w1qumf"]
+[gd_scene load_steps=7 format=3 uid="uid://crcuqo2w1qumf"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://cggjfrtm57mfa" path="res://assets/all assests G.png" id="2_33cqm"]
 [ext_resource type="PackedScene" uid="uid://g0daaowr0ewa" path="res://scene/coin_collectable.tscn" id="3_33cqm"]
+[ext_resource type="Script" uid="uid://cvick7ctdpnur" path="res://scripts/game_manager.gd" id="4_xwcet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
 texture = ExtResource("2_33cqm")
@@ -76,3 +77,7 @@ position = Vector2(-582, -99)
 
 [node name="coin collectable4" parent="." instance=ExtResource("3_33cqm")]
 position = Vector2(-553, -3)
+
+[node name="gameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_xwcet")

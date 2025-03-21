@@ -56,3 +56,5 @@ speed_scale = 0.7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-17, -5)
 shape = SubResource("CircleShape2D_td0c2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
