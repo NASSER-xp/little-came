@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=4 uid="uid://crcuqo2w1qumf"]
+[gd_scene load_steps=18 format=4 uid="uid://crcuqo2w1qumf"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
-[ext_resource type="PackedScene" uid="uid://g0daaowr0ewa" path="res://scene/coin collectable.tscn" id="3_33cqm"]
 [ext_resource type="Texture2D" uid="uid://hg7ifiogb2ab" path="res://assets/pixellab-2d-flat-battery---1751583046897.png" id="4_p1ry8"]
 [ext_resource type="Script" uid="uid://cvick7ctdpnur" path="res://scripts/game_manager.gd" id="4_xwcet"]
 [ext_resource type="PackedScene" uid="uid://d2bwchdnl0e0n" path="res://scene/door.tscn" id="6_xlg7c"]
@@ -159,29 +158,109 @@ tile_set = SubResource("TileSet_p1ry8")
 
 [node name="collectables g" type="Node" parent="."]
 
-[node name="coin collectable11" parent="collectables g" instance=ExtResource("3_33cqm")]
+[node name="coin collectable11" parent="collectables g"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(1209, 222)
+script = null
 
-[node name="coin collectable2" parent="collectables g" instance=ExtResource("3_33cqm")]
+[node name="coin collectable2" parent="collectables g"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(96, 174)
+script = null
 
-[node name="coin collectable3" parent="collectables g" instance=ExtResource("3_33cqm")]
+[node name="coin collectable3" parent="collectables g"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(265, 126)
+script = null
 
-[node name="coin collectable4" parent="collectables g" instance=ExtResource("3_33cqm")]
+[node name="coin collectable4" parent="collectables g"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(294, 222)
+script = null
 
-[node name="coin collectable7" parent="collectables g" instance=ExtResource("3_33cqm")]
+[node name="coin collectable7" parent="collectables g"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(519, 175)
+script = null
 
-[node name="coin collectable8" parent="collectables g" instance=ExtResource("3_33cqm")]
+[node name="coin collectable8" parent="collectables g"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(649, 175)
+script = null
 
-[node name="coin collectable9" parent="collectables g" instance=ExtResource("3_33cqm")]
+[node name="coin collectable9" parent="collectables g"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(777, 143)
+script = null
 
-[node name="coin collectable10" parent="collectables g" instance=ExtResource("3_33cqm")]
+[node name="coin collectable10" parent="collectables g"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(745, 63)
+script = null
 
 [node name="gameManager" type="Node" parent="."]
 unique_name_in_owner = true
