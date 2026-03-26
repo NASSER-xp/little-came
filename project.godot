@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="platform game"
-run/main_scene="res://scene/game.tscn"
+run/main_scene="uid://crcuqo2w1qumf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [display]
