@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5403ihuwwnsk"]
+[gd_scene load_steps=9 format=3 uid="uid://b5403ihuwwnsk"]
 
-[ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
 [ext_resource type="Script" uid="uid://cvick7ctdpnur" path="res://scripts/game_manager.gd" id="4_xwcet"]
 [ext_resource type="PackedScene" uid="uid://d2bwchdnl0e0n" path="res://scene/door.tscn" id="6_xlg7c"]
@@ -74,13 +73,6 @@ sources/1 = SubResource("TileSetAtlasSource_xlg7c")
 size = Vector2(1000, 6)
 
 [node name="Level2" type="Node2D"]
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_dbls1")]
-position = Vector2(50, 200)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(5, 5)
-position_smoothing_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
