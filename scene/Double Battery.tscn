@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://xqbxv516xnly"]
+
+[ext_resource type="Script" uid="uid://hfwbg4uavgqd" path="res://scripts/coin_collectable.gd" id="1_py6uo"]
+[ext_resource type="Texture2D" uid="uid://23vvp3ycuuu1" path="res://assets/pixellab-2d-flat-battery---175battery-Sheet-export.png" id="2_mlcsj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88376"]
+atlas = ExtResource("2_mlcsj")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xaqwi"]
+atlas = ExtResource("2_mlcsj")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26wnw"]
+atlas = ExtResource("2_mlcsj")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eve3j"]
+atlas = ExtResource("2_mlcsj")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jrbol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88376")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xaqwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26wnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eve3j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_td0c2"]
+radius = 3.0
+
+[node name="Double Battery" type="Area2D"]
+script = ExtResource("1_py6uo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-18, -5)
+scale = Vector2(0.125, 0.09375)
+sprite_frames = SubResource("SpriteFrames_jrbol")
+autoplay = "default"
+frame = 1
+frame_progress = 0.840571
+speed_scale = 0.7
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(-16, -6)
+scale = Vector2(0.125, 0.09375)
+sprite_frames = SubResource("SpriteFrames_jrbol")
+autoplay = "default"
+frame = 2
+frame_progress = 0.630582
+speed_scale = 0.7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-17, -5)
+shape = SubResource("CircleShape2D_td0c2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

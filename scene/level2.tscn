@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5403ihuwwnsk"]
+[gd_scene load_steps=15 format=3 uid="uid://b5403ihuwwnsk"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
 [ext_resource type="Texture2D" uid="uid://hg7ifiogb2ab" path="res://assets/pixellab-2d-flat-battery---1751583046897.png" id="4_nluny"]
 [ext_resource type="Script" uid="uid://cvick7ctdpnur" path="res://scripts/game_manager.gd" id="4_xwcet"]
+[ext_resource type="PackedScene" uid="uid://xqbxv516xnly" path="res://scene/Double Battery.tscn" id="6_lnfv4"]
 [ext_resource type="PackedScene" uid="uid://d2bwchdnl0e0n" path="res://scene/door.tscn" id="6_xlg7c"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_33cqm"]
@@ -123,7 +124,6 @@ step = 1.0
 value = 100.0
 rounded = true
 fill_mode = 3
-show_percentage = false
 
 [node name="InfiniteBatteryButton" type="Button" parent="ui"]
 offset_left = 54.0
@@ -150,3 +150,6 @@ position = Vector2(18, -3)
 offset = Vector2(10, -40)
 zoom = Vector2(5, 5)
 position_smoothing_enabled = true
+
+[node name="Double Battery" parent="." instance=ExtResource("6_lnfv4")]
+position = Vector2(87, 224)

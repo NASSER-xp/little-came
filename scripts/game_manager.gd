@@ -21,6 +21,7 @@ func _ready():
 
 func _on_player_energy_changed(value):
 	if energy_bar:
+		energy_bar.max_value = player.max_energy
 		energy_bar.value = value
 
 

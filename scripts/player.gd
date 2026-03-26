@@ -8,12 +8,15 @@ const ZERO_ENERGY_FRICTION = 100.0  # احتكاك أبطأ عند نفاد ال
 @export var max_energy: float = 300.0
 @export var start_energy: float = 300.0
 @export var energy_drain_rate: float = 50.0
+@export var capacity_multiplier: float = 1.0
 var energy: float = 0.0 # الطاقة الحالية
 var infinite_battery := false
 signal energy_changed(value)
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _ready() -> void:
+	max_energy = max_energy * capacity_multiplier
+	start_energy = min(start_energy * capacity_multiplier, max_energy)
 	energy = start_energy
 	emit_signal("energy_changed", energy)
 	_connect_void_kill_zone()
@@ -57,6 +60,13 @@ func add_energy(amount: float) -> void:
 	energy = min(energy + amount, max_energy)
 	if energy != old_energy:
 		emit_signal("energy_changed", energy)
+
+func increase_max_energy(amount: float) -> void:
+	if amount <= 0.0:
+		return
+	max_energy += amount
+	energy = min(energy, max_energy)
+	emit_signal("energy_changed", energy)
 
 
 func set_infinite_battery(enabled: bool) -> void:
