@@ -7,7 +7,7 @@ const FRICTION = 350.0  # الاحتكاك العادي
 const ZERO_ENERGY_FRICTION = 100.0  # احتكاك أبطأ عند نفاد الطاقة
 @export var max_energy: float = 300.0
 @export var start_energy: float = 300.0
-@export var energy_drain_rate: float = 40.0
+@export var energy_drain_rate: float = 50.0
 var energy: float = 0.0 # الطاقة الحالية
 var infinite_battery := false
 signal energy_changed(value)

@@ -14,6 +14,7 @@ func _ready():
 			energy_bar.max_value = player.max_energy
 		_on_player_energy_changed(player.energy)
 	if infinite_button:
+		infinite_button.focus_mode = Control.FOCUS_NONE
 		infinite_button.toggled.connect(_on_infinite_battery_button_toggled)
 		infinite_button.button_pressed = player.infinite_battery
 		_update_infinite_button_text()
