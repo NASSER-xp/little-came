@@ -172,7 +172,7 @@ position = Vector2(265, 126)
 position = Vector2(294, 222)
 
 [node name="coin collectable7" parent="collectables g" instance=ExtResource("3_33cqm")]
-position = Vector2(507, 175)
+position = Vector2(519, 175)
 
 [node name="coin collectable8" parent="collectables g" instance=ExtResource("3_33cqm")]
 position = Vector2(649, 175)
