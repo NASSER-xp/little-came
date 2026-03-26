@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=12 format=3 uid="uid://dgfbwnoxi8awe"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://cgbkktf1jff05"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_8ynf2"]
 [ext_resource type="PackedScene" uid="uid://g0daaowr0ewa" path="res://scene/coin_collectable.tscn" id="2_7p5x4"]
@@ -134,6 +138,14 @@ step = 1.0
 value = 100.0
 rounded = true
 fill_mode = 3
+<<<<<<< Updated upstream
 
 [node name="Node2D" parent="." instance=ExtResource("4_h2gft")]
 position = Vector2(624, 184)
+=======
+show_percentage = false
+
+[node name="Node2D" parent="." instance=ExtResource("4_h2gft")]
+position = Vector2(624, 184)
+next_scene_path = "res://scene/game.tscn"
+>>>>>>> Stashed changes
