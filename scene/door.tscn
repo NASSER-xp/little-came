@@ -1,11 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://d2bwchdnl0e0n"]
 
 [ext_resource type="Texture2D" uid="uid://clcehu8gfa752" path="res://assets/door animation-Sheet.png" id="1_y5pye"]
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://bt8gb6p0l7me" path="res://scripts/level_door.gd" id="2_8m4fr"]
-=======
 [ext_resource type="Script" uid="uid://cwow1pnrbj30a" path="res://scripts/door.gd" id="2_7c8h1"]
->>>>>>> 55dccf13b11ff1169584e58dd94dbd3f0541590d
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7qj5"]
 atlas = ExtResource("1_y5pye")
