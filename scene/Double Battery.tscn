@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://xqbxv516xnly"]
 
-[ext_resource type="Script" uid="uid://hfwbg4uavgqd" path="res://scripts/coin_collectable.gd" id="1_py6uo"]
+[ext_resource type="Script" uid="uid://c2s1dsym7015g" path="res://scene/double_battery.gd" id="1_py6uo"]
 [ext_resource type="Texture2D" uid="uid://23vvp3ycuuu1" path="res://assets/pixellab-2d-flat-battery---175battery-Sheet-export.png" id="2_mlcsj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88376"]
