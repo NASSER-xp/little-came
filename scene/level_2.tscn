@@ -134,7 +134,6 @@ step = 1.0
 value = 100.0
 rounded = true
 fill_mode = 3
-show_percentage = false
 
 [node name="Node2D" parent="." instance=ExtResource("4_h2gft")]
 position = Vector2(624, 184)
