@@ -1,0 +1,124 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjf3u7p40tuak"]
+
+[ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_8ynf2"]
+[ext_resource type="PackedScene" uid="uid://g0daaowr0ewa" path="res://scene/coin_collectable.tscn" id="2_7p5x4"]
+[ext_resource type="Script" uid="uid://cvick7ctdpnur" path="res://scripts/game_manager.gd" id="3_wx9qa"]
+[ext_resource type="PackedScene" uid="uid://d2bwchdnl0e0n" path="res://scene/door.tscn" id="4_h2gft"]
+[ext_resource type="Texture2D" uid="uid://hg7ifiogb2ab" path="res://assets/pixellab-2d-flat-battery---1751583046897.png" id="5_1t2md"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(700, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_platform_a"]
+size = Vector2(120, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_platform_b"]
+size = Vector2(120, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.803922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fill"]
+bg_color = Color(0.0707517, 0.692121, 0.384202, 1)
+
+[node name="level_2" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_8ynf2")]
+position = Vector2(66, 194)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(18, -3)
+offset = Vector2(50, -40)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(350, 280)
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="GroundVisual" type="ColorRect" parent="."]
+offset_top = 270.0
+offset_right = 700.0
+offset_bottom = 310.0
+color = Color(0.25, 0.3, 0.22, 1)
+
+[node name="PlatformA" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformA"]
+position = Vector2(238, 220)
+shape = SubResource("RectangleShape2D_platform_a")
+
+[node name="PlatformAVisual" type="ColorRect" parent="."]
+offset_left = 178.0
+offset_top = 212.0
+offset_right = 298.0
+offset_bottom = 228.0
+color = Color(0.38, 0.43, 0.35, 1)
+
+[node name="PlatformB" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformB"]
+position = Vector2(470, 170)
+shape = SubResource("RectangleShape2D_platform_b")
+
+[node name="PlatformBVisual" type="ColorRect" parent="."]
+offset_left = 410.0
+offset_top = 162.0
+offset_right = 530.0
+offset_bottom = 178.0
+color = Color(0.38, 0.43, 0.35, 1)
+
+[node name="collectables g" type="Node" parent="."]
+
+[node name="coin collectable1" parent="collectables g" instance=ExtResource("2_7p5x4")]
+position = Vector2(229, 196)
+
+[node name="coin collectable2" parent="collectables g" instance=ExtResource("2_7p5x4")]
+position = Vector2(468, 146)
+
+[node name="coin collectable3" parent="collectables g" instance=ExtResource("2_7p5x4")]
+position = Vector2(580, 250)
+
+[node name="gameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_wx9qa")
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="Panel2" type="Panel" parent="ui"]
+offset_left = 7.0
+offset_top = 493.0
+offset_right = 34.0
+offset_bottom = 616.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2a")
+
+[node name="Pixellab-2d-flat-battery---1751583046897" type="Sprite2D" parent="ui/Panel2"]
+texture_filter = 1
+position = Vector2(17, 16)
+rotation = 1.57555
+scale = Vector2(0.689843, 0.522961)
+texture = ExtResource("5_1t2md")
+
+[node name="ProgressBar" type="ProgressBar" parent="ui/Panel2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 35.0
+offset_right = 32.0
+offset_bottom = 150.0
+theme_override_constants/outline_size = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fill")
+max_value = 300.0
+step = 1.0
+value = 100.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="Node2D" parent="." instance=ExtResource("4_h2gft")]
+position = Vector2(640, 254)
+next_scene_path = "res://scene/game.tscn"
