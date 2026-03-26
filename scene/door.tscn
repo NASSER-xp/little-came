@@ -103,7 +103,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5pye"]
-size = Vector2(16, 16)
+size = Vector2(28, 20)
 
 [node name="Node2D" type="Area2D"]
 script = ExtResource("2_7c8h1")
@@ -114,4 +114,5 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5623o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_y5pye")
