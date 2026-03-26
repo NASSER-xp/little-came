@@ -98,6 +98,14 @@ script = ExtResource("3_wx9qa")
 
 [node name="ui" type="CanvasLayer" parent="."]
 
+[node name="InfiniteBatteryButton" type="Button" parent="ui"]
+offset_left = 54.0
+offset_top = 516.0
+offset_right = 245.0
+offset_bottom = 547.0
+toggle_mode = true
+text = "Infinity Battery: OFF"
+
 [node name="Panel2" type="Panel" parent="ui"]
 offset_left = 7.0
 offset_top = 493.0
