@@ -136,7 +136,7 @@ show_behind_parent = true
 texture_filter = 1
 tile_set = SubResource("TileSet_p1ry8")
 format = 2
-layer_0/tile_data = PackedInt32Array(1048640, 131073, 3)
+layer_0/tile_data = PackedInt32Array(1048640, 131073, 3, -393124, 458753, 0, -327588, 458753, 0, -327589, 458753, 0, -327590, 458753, 0)
 
 [node name="Layer1" type="TileMapLayer" parent="TileMap"]
 texture_filter = 1
