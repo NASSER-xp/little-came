@@ -65,3 +65,78 @@ scale = Vector2(2.13757, 1.92)
 theme_override_font_sizes/font_size = 40
 text = "Little Cam"
 horizontal_alignment = 1
+
+[node name="SettingsMenu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -160.0
+offset_right = 220.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = -12.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="ResolutionLabel" type="Label" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 70.0
+offset_right = -16.0
+offset_bottom = 95.0
+grow_horizontal = 2
+text = "Resolution"
+
+[node name="ResolutionOption" type="OptionButton" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 100.0
+offset_right = -16.0
+offset_bottom = 135.0
+grow_horizontal = 2
+
+[node name="ApplyButton" type="Button" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 145.0
+offset_right = -16.0
+offset_bottom = 180.0
+grow_horizontal = 2
+text = "Apply"
+
+[node name="CloseButton" type="Button" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 168.0
+offset_top = -158.0
+offset_right = 218.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Close"
