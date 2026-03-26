@@ -118,7 +118,7 @@ bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.803922)
 bg_color = Color(0.0707517, 0.692121, 0.384202, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33cqm"]
-size = Vector2(6, 16)
+size = Vector2(7, 16)
 
 [node name="game" type="Node2D"]
 
@@ -217,7 +217,7 @@ show_percentage = false
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(576, 184)
+position = Vector2(576.5, 184)
 shape = SubResource("RectangleShape2D_33cqm")
 
 [node name="Node2D" parent="." instance=ExtResource("6_xlg7c")]
