@@ -188,7 +188,7 @@ toggle_mode = true
 text = "Infinity Battery: OFF"
 
 [node name="Node2D" parent="." instance=ExtResource("6_xlg7c")]
-position = Vector2(1292, 248)
+position = Vector2(1313, 248)
 
 [node name="Void" type="Area2D" parent="."]
 
