@@ -14,8 +14,7 @@ signal energy_changed(value)
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _ready() -> void:
-	energy = clampf(start_energy, 0.0, max_energy)
-
+	_connect_void_kill_zone()
 
 func _physics_process(delta: float) -> void:
 	var prev_x := global_position.x
@@ -69,3 +68,12 @@ func set_infinite_battery(enabled: bool) -> void:
 
 func _on_coin_collectable_body_entered(_body: Node2D) -> void:
 	pass # Replace with function body.
+
+func _connect_void_kill_zone() -> void:
+	var void_area := get_tree().current_scene.find_child("Void", true, false)
+	if void_area is Area2D and not void_area.body_entered.is_connected(_on_void_body_entered):
+		void_area.body_entered.connect(_on_void_body_entered)
+
+func _on_void_body_entered(body: Node2D) -> void:
+	if body == self:
+		get_tree().reload_current_scene()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://d2bwchdnl0e0n"]
 
 [ext_resource type="Texture2D" uid="uid://clcehu8gfa752" path="res://assets/door animation-Sheet.png" id="1_y5pye"]
-[ext_resource type="Script" path="res://scripts/level_door.gd" id="2_8m4fr"]
+[ext_resource type="Script" uid="uid://cwow1pnrbj30a" path="res://scripts/door.gd" id="2_7c8h1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7qj5"]
 atlas = ExtResource("1_y5pye")
@@ -97,24 +97,22 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vj5l5")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5pye"]
-size = Vector2(16, 16)
+size = Vector2(28, 20)
 
 [node name="Node2D" type="Area2D"]
-script = ExtResource("2_8m4fr")
+script = ExtResource("2_7c8h1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 15
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5623o")
-autoplay = "default"
-frame = 12
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_y5pye")
