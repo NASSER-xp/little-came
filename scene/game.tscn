@@ -226,6 +226,7 @@ shape = SubResource("RectangleShape2D_33cqm")
 [node name="Node2D" parent="." instance=ExtResource("6_xlg7c")]
 visibility_layer = 2
 position = Vector2(1624, 216)
+next_scene_path = "res://scene/level2.tscn"
 
 [node name="Void" type="Area2D" parent="."]
 
