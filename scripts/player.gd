@@ -14,6 +14,8 @@ signal energy_changed(value)
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _ready() -> void:
+	energy = start_energy
+	emit_signal("energy_changed", energy)
 	_connect_void_kill_zone()
 
 func _physics_process(delta: float) -> void:
