@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 20.0
+const SPEED = 90.0
 const JUMP_VELOCITY = -180.0
 const GRAVITY = 500.0
 const FRICTION = 350.0  # الاحتكاك العادي
