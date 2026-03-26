@@ -5,7 +5,7 @@ const JUMP_VELOCITY = -180.0
 const GRAVITY = 500.0
 const FRICTION = 350.0  # الاحتكاك العادي
 const ZERO_ENERGY_FRICTION = 100.0  # احتكاك أبطأ عند نفاد الطاقة
-var energy := 300 # الطاقة القصوى
+var energy := 350 # الطاقة القصوى
 signal energy_changed(value)
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
