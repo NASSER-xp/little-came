@@ -4,5 +4,7 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D"):
-		queue_free() # Replace with function body.
-		game_manager.add_point()
+		if body.has_method("add_energy"):
+			body.add_energy(200)
+		queue_free() # حذف العملة بعد الجمع
+		

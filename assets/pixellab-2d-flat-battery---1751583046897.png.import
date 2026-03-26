@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvbx215vxgsjc"
-path="res://.godot/imported/ANIMATION COIN.png-2706634468d64c5e7fe2efb589767337.ctex"
+uid="uid://hg7ifiogb2ab"
+path="res://.godot/imported/pixellab-2d-flat-battery---1751583046897.png-5705c07208143c20a4bc62e2cc672f2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ANIMATION COIN.png"
-dest_files=["res://.godot/imported/ANIMATION COIN.png-2706634468d64c5e7fe2efb589767337.ctex"]
+source_file="res://assets/pixellab-2d-flat-battery---1751583046897.png"
+dest_files=["res://.godot/imported/pixellab-2d-flat-battery---1751583046897.png-5705c07208143c20a4bc62e2cc672f2d.ctex"]
 
 [params]
 

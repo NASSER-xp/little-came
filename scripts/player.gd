@@ -3,30 +3,44 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -180.0
 const GRAVITY = 500.0
-const FRICTION = 500.0  # قيمة الاحتكاك للتباطؤ التدريجي
+const FRICTION = 350.0  # الاحتكاك العادي
+const ZERO_ENERGY_FRICTION = 100.0  # احتكاك أبطأ عند نفاد الطاقة
+var energy := 300 # الطاقة القصوى
+signal energy_changed(value)
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# الجاذبية
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	# القفز
+	if Input.is_action_just_pressed("jump") and is_on_floor() and energy > 0:
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
-	if direction != 0:
+	if energy > 0 and direction != 0:
 		velocity.x = direction * SPEED
-		# Flip the sprite based on direction
-		sprite_2d.flip_h = direction < 0  # Flip if moving left
+		sprite_2d.flip_h = direction < 0
+		var old_energy = energy
+		energy = max(energy - 1 * delta, 0)
+		if energy != old_energy:
+			emit_signal("energy_changed", energy)
 	else:
-		# Reduce velocity gradually when no input is given
-		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+		# استخدم ZERO_ENERGY_FRICTION عند نفاد الطاقة، وإلا استخدم FRICTION العادي
+		var friction = FRICTION
+		if energy == 0:
+			friction = ZERO_ENERGY_FRICTION
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
 
-	# Move the player
 	move_and_slide()
+
+# دالة لزيادة طاقة اللاعب بشكل آمن
+func add_energy(amount: float) -> void:
+	var old_energy = energy
+	energy = min(energy + amount, 300)
+	if energy != old_energy:
+		emit_signal("energy_changed", energy)
 
 
 func _on_coin_collectable_body_entered(body: Node2D) -> void:
