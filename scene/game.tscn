@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://crcuqo2w1qumf"]
+[gd_scene load_steps=16 format=4 uid="uid://crcuqo2w1qumf"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
@@ -120,14 +120,17 @@ bg_color = Color(0.0707517, 0.692121, 0.384202, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33cqm"]
 size = Vector2(6, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlg7c"]
+size = Vector2(190, 6)
+
 [node name="game" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_dbls1")]
-position = Vector2(1300, 228)
+position = Vector2(30, 227)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(18, -3)
-offset = Vector2(50, -40)
+offset = Vector2(10, -40)
 zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 
@@ -215,3 +218,9 @@ shape = SubResource("RectangleShape2D_33cqm")
 [node name="Node2D" parent="." instance=ExtResource("6_xlg7c")]
 visibility_layer = 2
 position = Vector2(1624, 216)
+
+[node name="Void" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Void"]
+position = Vector2(1088, 430)
+shape = SubResource("RectangleShape2D_xlg7c")
