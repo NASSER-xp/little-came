@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://crcuqo2w1qumf"]
+[gd_scene load_steps=21 format=4 uid="uid://crcuqo2w1qumf"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
@@ -118,6 +118,9 @@ bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.803922)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlg7c"]
 bg_color = Color(0.0707517, 0.692121, 0.384202, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dash"]
+bg_color = Color(0.180392, 0.443137, 1, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33cqm"]
 size = Vector2(7, 16)
 
@@ -198,8 +201,8 @@ text = "Debug"
 
 [node name="Panel2" type="Panel" parent="ui"]
 offset_left = 7.0
-offset_top = 493.0
-offset_right = 34.0
+offset_top = 490.0
+offset_right = 65.0
 offset_bottom = 616.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_xlg7c")
 
@@ -214,12 +217,27 @@ texture = ExtResource("4_p1ry8")
 layout_mode = 0
 offset_left = 2.0
 offset_top = 35.0
-offset_right = 32.0
+offset_right = 22.0
 offset_bottom = 150.0
 theme_override_constants/outline_size = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_33cqm")
 theme_override_styles/fill = SubResource("StyleBoxFlat_xlg7c")
 max_value = 300.0
+step = 1.0
+value = 100.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="DashBar" type="ProgressBar" parent="ui/Panel2"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 35.0
+offset_right = 52.0
+offset_bottom = 150.0
+theme_override_constants/outline_size = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_33cqm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dash")
 step = 1.0
 value = 100.0
 rounded = true
