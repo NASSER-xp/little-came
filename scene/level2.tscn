@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://bh2f08r1wnbta"]
+[gd_scene load_steps=16 format=3 uid="uid://bh2f08r1wnbta"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
+[ext_resource type="PackedScene" uid="uid://dv8r5ohyob463" path="res://scene/coin_collectable.tscn" id="3_33cqm"]
 [ext_resource type="Texture2D" uid="uid://hg7ifiogb2ab" path="res://assets/pixellab-2d-flat-battery---1751583046897.png" id="4_nluny"]
 [ext_resource type="Script" uid="uid://cvick7ctdpnur" path="res://scripts/game_manager.gd" id="4_xwcet"]
 [ext_resource type="PackedScene" uid="uid://d2bwchdnl0e0n" path="res://scene/door.tscn" id="6_xlg7c"]
+[ext_resource type="PackedScene" path="res://scene/in_game_menu.tscn" id="7_menu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_33cqm"]
 load_path = "res://.godot/imported/all assests G.png-2d6ff1798c1b12ef33d098f58ead0033.ctex"
@@ -187,8 +189,30 @@ offset_bottom = 547.0
 toggle_mode = true
 text = "Infinity Battery: OFF"
 
+[node name="collectables" type="Node" parent="."]
+
+[node name="coin1" parent="collectables" instance=ExtResource("3_33cqm")]
+position = Vector2(265, 128)
+
+[node name="coin2" parent="collectables" instance=ExtResource("3_33cqm")]
+position = Vector2(441, 288)
+
+[node name="coin3" parent="collectables" instance=ExtResource("3_33cqm")]
+position = Vector2(649, 192)
+
+[node name="coin4" parent="collectables" instance=ExtResource("3_33cqm")]
+position = Vector2(760, 16)
+
+[node name="coin5" parent="collectables" instance=ExtResource("3_33cqm")]
+position = Vector2(986, 240)
+
+[node name="coin6" parent="collectables" instance=ExtResource("3_33cqm")]
+position = Vector2(1249, 192)
+
 [node name="Node2D" parent="." instance=ExtResource("6_xlg7c")]
 position = Vector2(1313, 248)
+
+[node name="InGameMenu" parent="." instance=ExtResource("7_menu")]
 
 [node name="Void" type="Area2D" parent="."]
 
