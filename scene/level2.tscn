@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bh2f08r1wnbta"]
+[gd_scene load_steps=20 format=3 uid="uid://bh2f08r1wnbta"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
@@ -141,6 +141,16 @@ bg_color = Color(0.180392, 0.443137, 1, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlg7c"]
 size = Vector2(1119, 6)
 
+[sub_resource type="QuadMesh" id="QuadMesh_lnov8"]
+
+[sub_resource type="Gradient" id="Gradient_qpk70"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kj7ci"]
+gradient = SubResource("Gradient_qpk70")
+fill_from = Vector2(0.541284, 0.197248)
+fill_to = Vector2(0.545872, 0.633027)
+
 [node name="Level2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -257,3 +267,17 @@ position = Vector2(18, -3)
 offset = Vector2(10, -40)
 zoom = Vector2(5, 5)
 position_smoothing_enabled = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+texture_filter = 1
+position = Vector2(472, 343)
+scale = Vector2(370, 184)
+mesh = SubResource("QuadMesh_lnov8")
+texture = SubResource("GradientTexture2D_kj7ci")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+texture_filter = 1
+position = Vector2(1000, 321)
+scale = Vector2(50, 162)
+mesh = SubResource("QuadMesh_lnov8")
+texture = SubResource("GradientTexture2D_kj7ci")
