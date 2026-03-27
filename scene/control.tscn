@@ -77,7 +77,6 @@ texture = ExtResource("2_mnow5")
 centered = false
 
 [node name="SettingsMenu" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -129,10 +128,10 @@ grow_horizontal = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 16.0
-offset_top = 145.0
-offset_right = -16.0
-offset_bottom = 180.0
+offset_left = 353.0
+offset_top = 277.0
+offset_right = -13.0
+offset_bottom = 312.0
 grow_horizontal = 2
 text = "Apply"
 
