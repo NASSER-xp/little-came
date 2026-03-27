@@ -1,11 +1,12 @@
-[gd_scene load_steps=19 format=4 uid="uid://crcuqo2w1qumf"]
+[gd_scene load_steps=20 format=4 uid="uid://crcuqo2w1qumf"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
-[ext_resource type="PackedScene" uid="uid://g0daaowr0ewa" path="res://scene/coin_collectable.tscn" id="3_33cqm"]
+[ext_resource type="PackedScene" uid="uid://dv8r5ohyob463" path="res://scene/coin_collectable.tscn" id="3_33cqm"]
 [ext_resource type="Texture2D" uid="uid://hg7ifiogb2ab" path="res://assets/pixellab-2d-flat-battery---1751583046897.png" id="4_p1ry8"]
 [ext_resource type="Script" uid="uid://cvick7ctdpnur" path="res://scripts/game_manager.gd" id="4_xwcet"]
 [ext_resource type="PackedScene" uid="uid://d2bwchdnl0e0n" path="res://scene/door.tscn" id="6_xlg7c"]
+[ext_resource type="PackedScene" path="res://scene/in_game_menu.tscn" id="7_menu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_33cqm"]
 load_path = "res://.godot/imported/all assests G.png-2d6ff1798c1b12ef33d098f58ead0033.ctex"
@@ -159,29 +160,17 @@ tile_set = SubResource("TileSet_p1ry8")
 
 [node name="collectables g" type="Node" parent="."]
 
-[node name="coin collectable11" parent="collectables g" instance=ExtResource("3_33cqm")]
-position = Vector2(1209, 222)
+[node name="coin1" parent="collectables g" instance=ExtResource("3_33cqm")]
+position = Vector2(297, 192)
 
-[node name="coin collectable2" parent="collectables g" instance=ExtResource("3_33cqm")]
-position = Vector2(96, 174)
-
-[node name="coin collectable3" parent="collectables g" instance=ExtResource("3_33cqm")]
-position = Vector2(265, 126)
-
-[node name="coin collectable4" parent="collectables g" instance=ExtResource("3_33cqm")]
-position = Vector2(294, 222)
-
-[node name="coin collectable7" parent="collectables g" instance=ExtResource("3_33cqm")]
-position = Vector2(519, 175)
-
-[node name="coin collectable8" parent="collectables g" instance=ExtResource("3_33cqm")]
+[node name="coin2" parent="collectables g" instance=ExtResource("3_33cqm")]
 position = Vector2(649, 175)
 
-[node name="coin collectable9" parent="collectables g" instance=ExtResource("3_33cqm")]
-position = Vector2(777, 143)
+[node name="coin3" parent="collectables g" instance=ExtResource("3_33cqm")]
+position = Vector2(1001, 81)
 
-[node name="coin collectable10" parent="collectables g" instance=ExtResource("3_33cqm")]
-position = Vector2(745, 63)
+[node name="coin4" parent="collectables g" instance=ExtResource("3_33cqm")]
+position = Vector2(1245, 223)
 
 [node name="gameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -225,7 +214,6 @@ step = 1.0
 value = 100.0
 rounded = true
 fill_mode = 3
-show_percentage = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -237,6 +225,8 @@ shape = SubResource("RectangleShape2D_33cqm")
 visibility_layer = 2
 position = Vector2(1624, 216)
 next_scene_path = "res://scene/level2.tscn"
+
+[node name="InGameMenu" parent="." instance=ExtResource("7_menu")]
 
 [node name="Void" type="Area2D" parent="."]
 
