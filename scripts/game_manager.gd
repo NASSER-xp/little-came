@@ -4,6 +4,7 @@ extends Node
 @onready var player = get_node("../CharacterBody2D")
 @onready var energy_bar: ProgressBar = get_node("../ui/Panel2/ProgressBar") # أو EnergyBar حسب الاسم
 @onready var infinite_button: Button = get_node_or_null("../ui/InfiniteBatteryButton")
+@onready var debug_button: Button = get_node_or_null("../ui/DebugButton")
 
 
 
@@ -18,6 +19,14 @@ func _ready():
 		infinite_button.toggled.connect(_on_infinite_battery_button_toggled)
 		infinite_button.button_pressed = GlobalState.infinite_battery
 		_update_infinite_button_text()
+		
+		# Hide by default if we have a debug menu
+		if debug_button:
+			infinite_button.visible = debug_button.button_pressed
+	
+	if debug_button:
+		debug_button.focus_mode = Control.FOCUS_NONE
+		debug_button.toggled.connect(_on_debug_button_toggled)
 
 func _on_player_energy_changed(value):
 	if energy_bar:
@@ -30,6 +39,11 @@ func _on_infinite_battery_button_toggled(enabled: bool) -> void:
 	if player and player.has_method("set_infinite_battery"):
 		player.set_infinite_battery(enabled)
 	_update_infinite_button_text()
+
+
+func _on_debug_button_toggled(enabled: bool) -> void:
+	if infinite_button:
+		infinite_button.visible = enabled
 
 
 func _update_infinite_button_text() -> void:

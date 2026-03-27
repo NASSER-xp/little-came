@@ -180,12 +180,21 @@ script = ExtResource("4_xwcet")
 layer = 2
 
 [node name="InfiniteBatteryButton" type="Button" parent="ui"]
+visible = false
 offset_left = 54.0
 offset_top = 516.0
 offset_right = 245.0
 offset_bottom = 547.0
 toggle_mode = true
 text = "Infinity Battery: OFF"
+
+[node name="DebugButton" type="Button" parent="ui"]
+offset_left = 42.0
+offset_top = 612.0
+offset_right = 100.0
+offset_bottom = 643.0
+toggle_mode = true
+text = "Debug"
 
 [node name="Panel2" type="Panel" parent="ui"]
 offset_left = 7.0
