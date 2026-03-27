@@ -143,11 +143,11 @@ size = Vector2(1257, 6)
 
 [sub_resource type="QuadMesh" id="QuadMesh_brbha"]
 
-[sub_resource type="Gradient" id="Gradient_4wo2n"]
+[sub_resource type="Gradient" id="Gradient_brbha"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_nemop"]
-gradient = SubResource("Gradient_4wo2n")
+gradient = SubResource("Gradient_brbha")
 fill_from = Vector2(0.541284, 0.197248)
 fill_to = Vector2(0.545872, 0.633027)
 
@@ -297,7 +297,7 @@ position = Vector2(-7, 239)
 
 [node name="Node2D" parent="." instance=ExtResource("6_xlg7c")]
 position = Vector2(1313, 248)
-next_scene_path = "res://scene/control.tscn"
+next_scene_path = "res://scene/level6.tscn"
 
 [node name="InGameMenu" parent="." instance=ExtResource("7_menu")]
 
