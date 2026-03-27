@@ -184,18 +184,18 @@ layer = 2
 
 [node name="InfiniteBatteryButton" type="Button" parent="ui"]
 visible = false
-offset_left = 54.0
-offset_top = 516.0
-offset_right = 245.0
-offset_bottom = 547.0
+offset_left = 62.0
+offset_top = 576.0
+offset_right = 253.0
+offset_bottom = 607.0
 toggle_mode = true
 text = "Infinity Battery: OFF"
 
 [node name="DebugButton" type="Button" parent="ui"]
-offset_left = 42.0
-offset_top = 612.0
-offset_right = 100.0
-offset_bottom = 643.0
+offset_left = 62.0
+offset_top = 609.0
+offset_right = 120.0
+offset_bottom = 640.0
 toggle_mode = true
 text = "Debug"
 
