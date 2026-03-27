@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://y7j8tqscupeq"]
+[gd_scene load_steps=17 format=3 uid="uid://ca5qmtneqa3g3"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
@@ -136,7 +136,7 @@ bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.803922)
 bg_color = Color(0.0707517, 0.692121, 0.384202, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlg7c"]
-size = Vector2(1119, 6)
+size = Vector2(1257, 6)
 
 [node name="Level3" type="Node2D"]
 
@@ -228,7 +228,7 @@ next_scene_path = "res://scene/control.tscn"
 [node name="Void" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Void"]
-position = Vector2(677.5, 432)
+position = Vector2(746.5, 432)
 shape = SubResource("RectangleShape2D_xlg7c")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_dbls1")]
