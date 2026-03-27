@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkdpwlbrsl3ws"]
+[gd_scene load_steps=3 format=3 uid="uid://bkdpwlbrsl3ws"]
 
 [ext_resource type="Script" uid="uid://d1nnypfbu6tam" path="res://scripts/main_menu.gd" id="1_vrdfc"]
+[ext_resource type="Texture2D" uid="uid://bde7xhomcy7b8" path="res://assets/little cam.png" id="2_mnow5"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -52,23 +53,30 @@ action_mode = 0
 text = "Settings"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -216.0
-offset_right = 6.0
-offset_bottom = 55.0
+offset_left = -349.0
+offset_top = 135.0
+offset_right = 456.0
+offset_bottom = 333.0
 grow_horizontal = 2
-scale = Vector2(2.13757, 1.92)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 145
 text = "Little Cam"
 horizontal_alignment = 1
 uppercase = true
 
+[node name="LittleCam" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(258, -3)
+scale = Vector2(0.401856, 0.505246)
+texture = ExtResource("2_mnow5")
+centered = false
+
 [node name="SettingsMenu" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -120,10 +128,10 @@ grow_horizontal = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 16.0
-offset_top = 145.0
-offset_right = -16.0
-offset_bottom = 180.0
+offset_left = 353.0
+offset_top = 277.0
+offset_right = -13.0
+offset_bottom = 312.0
 grow_horizontal = 2
 text = "Apply"
 

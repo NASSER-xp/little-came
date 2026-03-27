@@ -5,13 +5,24 @@ const JUMP_VELOCITY = -180.0
 const GRAVITY = 500.0
 const FRICTION = 350.0  # الاحتكاك العادي
 const ZERO_ENERGY_FRICTION = 100.0  # احتكاك أبطأ عند نفاد الطاقة
+const DASH_SPEED = 200.0
+const DASH_DURATION = 0.3
+const DASH_STAMINA_COST = 70
+const DASH_STAMINA_REGEN = 5.0
+
 @export var max_energy: float = 300.0
 @export var start_energy: float = 300.0
 @export var energy_drain_rate: float = 50.0
 @export var capacity_multiplier: float = 1.0
 var energy: float = 0.0 # الطاقة الحالية
 var infinite_battery := false
+var is_dashing := false
+var can_dash := true
+var dash_stamina: float = 100.0
+var max_dash_stamina: float = 100.0
+
 signal energy_changed(value)
+signal dash_stamina_changed(value)
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _ready() -> void:
@@ -24,6 +35,7 @@ func _ready() -> void:
 		energy = max_energy
 		
 	emit_signal("energy_changed", energy)
+	emit_signal("dash_stamina_changed", dash_stamina)
 	_connect_void_kill_zone()
 
 func _physics_process(delta: float) -> void:
@@ -38,8 +50,17 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor() and can_use_energy:
 		velocity.y = JUMP_VELOCITY
 
+	# اندفاع (Dash)
+	if Input.is_action_just_pressed("dash") and can_dash and dash_stamina >= DASH_STAMINA_COST and can_use_energy:
+		start_dash()
+
 	var direction := Input.get_axis("left", "right")
-	if can_use_energy and direction != 0:
+	
+	if is_dashing:
+		# أثناء الاندفاع، نتحرك بسرعة ثابتة في الاتجاه الحالي
+		velocity.x = (1 if not sprite_2d.flip_h else -1) * DASH_SPEED
+		velocity.y = 0
+	elif can_use_energy and direction != 0:
 		velocity.x = direction * SPEED
 		sprite_2d.flip_h = direction < 0
 	else:
@@ -50,6 +71,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 
 	move_and_slide()
+	
+	# تجديد الستامينا
+	if not is_dashing and dash_stamina < max_dash_stamina:
+		dash_stamina = min(dash_stamina + DASH_STAMINA_REGEN * delta, max_dash_stamina)
+		emit_signal("dash_stamina_changed", dash_stamina)
 
 	# خصم الطاقة فقط إذا كان هناك إدخال حركة وحصلت حركة أفقية فعلية
 	var moved_x: float = absf(global_position.x - prev_x)
@@ -58,6 +84,22 @@ func _physics_process(delta: float) -> void:
 		energy = max(energy - energy_drain_rate * delta, 0)
 		if energy != old_energy:
 			emit_signal("energy_changed", energy)
+
+func start_dash() -> void:
+	is_dashing = true
+	can_dash = false
+	dash_stamina -= DASH_STAMINA_COST
+	emit_signal("dash_stamina_changed", dash_stamina)
+	
+	# استهلاك الطاقة للاندفاع بدلاً من المشي العادي (اختياري)
+	add_energy(-10.0) 
+	
+	await get_tree().create_timer(DASH_DURATION).timeout
+	is_dashing = false
+	
+	# منع الاندفاع مرة أخرى فوراً إذا لزم الأمر (cooldown)
+	await get_tree().create_timer(0.1).timeout 
+	can_dash = true
 
 # دالة لزيادة طاقة اللاعب بشكل آمن
 func add_energy(amount: float) -> void:

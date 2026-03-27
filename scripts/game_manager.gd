@@ -3,6 +3,7 @@ extends Node
 
 @onready var player = get_node("../CharacterBody2D")
 @onready var energy_bar: ProgressBar = get_node("../ui/Panel2/ProgressBar") # أو EnergyBar حسب الاسم
+@onready var dash_bar: ProgressBar = get_node_or_null("../ui/Panel2/DashBar")
 @onready var infinite_button: Button = get_node_or_null("../ui/InfiniteBatteryButton")
 @onready var debug_button: Button = get_node_or_null("../ui/DebugButton")
 
@@ -14,6 +15,13 @@ func _ready():
 		if energy_bar:
 			energy_bar.max_value = player.max_energy
 		_on_player_energy_changed(player.energy)
+	
+	if player and player.has_signal("dash_stamina_changed"):
+		player.dash_stamina_changed.connect(_on_player_dash_stamina_changed)
+		if dash_bar:
+			dash_bar.max_value = player.max_dash_stamina
+		_on_player_dash_stamina_changed(player.dash_stamina)
+
 	if infinite_button:
 		infinite_button.focus_mode = Control.FOCUS_NONE
 		infinite_button.toggled.connect(_on_infinite_battery_button_toggled)
@@ -32,6 +40,10 @@ func _on_player_energy_changed(value):
 	if energy_bar:
 		energy_bar.max_value = player.max_energy
 		energy_bar.value = value
+
+func _on_player_dash_stamina_changed(value):
+	if dash_bar:
+		dash_bar.value = value
 
 
 func _on_infinite_battery_button_toggled(enabled: bool) -> void:

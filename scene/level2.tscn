@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bh2f08r1wnbta"]
+[gd_scene load_steps=17 format=3 uid="uid://bh2f08r1wnbta"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
@@ -135,6 +135,9 @@ bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.803922)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnov8"]
 bg_color = Color(0.0707517, 0.692121, 0.384202, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dash"]
+bg_color = Color(0.180392, 0.443137, 1, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlg7c"]
 size = Vector2(1119, 6)
 
@@ -154,8 +157,8 @@ layer = 2
 
 [node name="Panel2" type="Panel" parent="ui"]
 offset_left = 7.0
-offset_top = 493.0
-offset_right = 34.0
+offset_top = 490.0
+offset_right = 65.0
 offset_bottom = 616.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_nluny")
 
@@ -170,7 +173,7 @@ texture = ExtResource("4_nluny")
 layout_mode = 0
 offset_left = 2.0
 offset_top = 35.0
-offset_right = 32.0
+offset_right = 22.0
 offset_bottom = 150.0
 theme_override_constants/outline_size = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_lnfv4")
@@ -182,20 +185,35 @@ rounded = true
 fill_mode = 3
 show_percentage = false
 
+[node name="DashBar" type="ProgressBar" parent="ui/Panel2"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 35.0
+offset_right = 52.0
+offset_bottom = 150.0
+theme_override_constants/outline_size = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_lnfv4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dash")
+step = 1.0
+value = 100.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
 [node name="InfiniteBatteryButton" type="Button" parent="ui"]
 visible = false
-offset_left = 54.0
-offset_top = 516.0
-offset_right = 245.0
-offset_bottom = 547.0
+offset_left = 62.0
+offset_top = 576.0
+offset_right = 253.0
+offset_bottom = 607.0
 toggle_mode = true
 text = "Infinity Battery: OFF"
 
 [node name="DebugButton" type="Button" parent="ui"]
-offset_left = 42.0
-offset_top = 612.0
-offset_right = 100.0
-offset_bottom = 643.0
+offset_left = 62.0
+offset_top = 609.0
+offset_right = 120.0
+offset_bottom = 640.0
 toggle_mode = true
 text = "Debug"
 
