@@ -133,7 +133,7 @@ sources/1 = SubResource("TileSetAtlasSource_xlg7c")
 bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.803922)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnov8"]
-bg_color = Color(0.1, 0.8, 0.4, 1)
+bg_color = Color(0.0707517, 0.692121, 0.384202, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dash"]
 bg_color = Color(0.180392, 0.443137, 1, 1)
