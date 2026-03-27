@@ -16,7 +16,7 @@ func _ready():
 	if infinite_button:
 		infinite_button.focus_mode = Control.FOCUS_NONE
 		infinite_button.toggled.connect(_on_infinite_battery_button_toggled)
-		infinite_button.button_pressed = player.infinite_battery
+		infinite_button.button_pressed = GlobalState.infinite_battery
 		_update_infinite_button_text()
 
 func _on_player_energy_changed(value):
@@ -26,9 +26,9 @@ func _on_player_energy_changed(value):
 
 
 func _on_infinite_battery_button_toggled(enabled: bool) -> void:
-	if not player or not player.has_method("set_infinite_battery"):
-		return
-	player.set_infinite_battery(enabled)
+	GlobalState.infinite_battery = enabled
+	if player and player.has_method("set_infinite_battery"):
+		player.set_infinite_battery(enabled)
 	_update_infinite_button_text()
 
 

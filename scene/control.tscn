@@ -57,14 +57,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -203.0
-offset_right = -8.0
+offset_left = -216.0
+offset_right = 6.0
 offset_bottom = 55.0
 grow_horizontal = 2
 scale = Vector2(2.13757, 1.92)
 theme_override_font_sizes/font_size = 40
 text = "Little Cam"
 horizontal_alignment = 1
+uppercase = true
 
 [node name="SettingsMenu" type="Panel" parent="."]
 visible = false

@@ -177,6 +177,7 @@ unique_name_in_owner = true
 script = ExtResource("4_xwcet")
 
 [node name="ui" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="InfiniteBatteryButton" type="Button" parent="ui"]
 offset_left = 54.0
@@ -214,6 +215,7 @@ step = 1.0
 value = 100.0
 rounded = true
 fill_mode = 3
+show_percentage = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bh2f08r1wnbta"]
+[gd_scene load_steps=16 format=3 uid="uid://y7j8tqscupeq"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
@@ -138,7 +138,7 @@ bg_color = Color(0.0707517, 0.692121, 0.384202, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlg7c"]
 size = Vector2(1119, 6)
 
-[node name="Level2" type="Node2D"]
+[node name="Level3" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -193,26 +193,26 @@ text = "Infinity Battery: OFF"
 [node name="collectables" type="Node" parent="."]
 
 [node name="coin1" parent="collectables" instance=ExtResource("3_33cqm")]
-position = Vector2(265, 128)
+position = Vector2(300, 150)
 
 [node name="coin2" parent="collectables" instance=ExtResource("3_33cqm")]
-position = Vector2(441, 288)
+position = Vector2(500, 250)
 
 [node name="coin3" parent="collectables" instance=ExtResource("3_33cqm")]
-position = Vector2(649, 192)
+position = Vector2(700, 200)
 
 [node name="coin4" parent="collectables" instance=ExtResource("3_33cqm")]
-position = Vector2(760, 16)
+position = Vector2(800, 50)
 
 [node name="coin5" parent="collectables" instance=ExtResource("3_33cqm")]
-position = Vector2(986, 240)
+position = Vector2(1000, 220)
 
 [node name="coin6" parent="collectables" instance=ExtResource("3_33cqm")]
-position = Vector2(1249, 192)
+position = Vector2(1200, 180)
 
 [node name="Node2D" parent="." instance=ExtResource("6_xlg7c")]
 position = Vector2(1313, 248)
-next_scene_path = "res://scene/level3.tscn"
+next_scene_path = "res://scene/control.tscn"
 
 [node name="InGameMenu" parent="." instance=ExtResource("7_menu")]
 
@@ -223,7 +223,7 @@ position = Vector2(677.5, 432)
 shape = SubResource("RectangleShape2D_xlg7c")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_dbls1")]
-position = Vector2(-44, 225)
+position = Vector2(0, 225)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(18, -3)
