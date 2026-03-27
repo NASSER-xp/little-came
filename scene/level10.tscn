@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bpk2vhiae1s6d" path="res://scene/Double Battery.tscn" id="5_xe55d"]
 [ext_resource type="PackedScene" uid="uid://d2bwchdnl0e0n" path="res://scene/door.tscn" id="6_xlg7c"]
 [ext_resource type="PackedScene" path="res://scene/in_game_menu.tscn" id="7_menu"]
-[ext_resource type="PackedScene" path="res://scene/fake_door.tscn" id="8_fake"]
+[ext_resource type="PackedScene" uid="uid://bqj2bwchdnl0f" path="res://scene/fake_door.tscn" id="8_fake"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_33cqm"]
 load_path = "res://.godot/imported/all assests G.png-2d6ff1798c1b12ef33d098f58ead0033.ctex"
