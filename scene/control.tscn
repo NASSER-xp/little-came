@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkdpwlbrsl3ws"]
+[gd_scene load_steps=7 format=3 uid="uid://bkdpwlbrsl3ws"]
 
 [ext_resource type="Script" uid="uid://d1nnypfbu6tam" path="res://scripts/main_menu.gd" id="1_vrdfc"]
 [ext_resource type="Texture2D" uid="uid://bde7xhomcy7b8" path="res://assets/little cam.png" id="2_mnow5"]
+[ext_resource type="Texture2D" uid="uid://bv5hqbduvdl1n" path="res://assets/game icon.png" id="3_f676y"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_mnow5"]
+
+[sub_resource type="Gradient" id="Gradient_4wo2n"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f676y"]
+gradient = SubResource("Gradient_4wo2n")
+fill_from = Vector2(0.541284, 0.197248)
+fill_to = Vector2(0.545872, 0.633027)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -150,3 +161,17 @@ offset_bottom = -118.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Close"
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+texture_filter = 1
+position = Vector2(679.5, 394)
+scale = Vector2(1645, 844)
+mesh = SubResource("QuadMesh_mnow5")
+texture = SubResource("GradientTexture2D_f676y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(818, 654)
+scale = Vector2(61.4688, 63.2812)
+texture = ExtResource("3_f676y")
