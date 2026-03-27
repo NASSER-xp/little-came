@@ -1,8 +1,8 @@
 extends Area2D
 
 @onready var game_manager: Node = %gameManager
-@export var energy_gain: float = 500.0
-@export var max_energy_bonus: float = 500.0
+var energy_gain: float = 300.0
+var max_energy_bonus: float = 0.0
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D"):
