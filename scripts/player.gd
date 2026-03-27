@@ -18,6 +18,11 @@ func _ready() -> void:
 	max_energy = max_energy * capacity_multiplier
 	start_energy = min(start_energy * capacity_multiplier, max_energy)
 	energy = start_energy
+	
+	infinite_battery = GlobalState.infinite_battery
+	if infinite_battery:
+		energy = max_energy
+		
 	emit_signal("energy_changed", energy)
 	_connect_void_kill_zone()
 
