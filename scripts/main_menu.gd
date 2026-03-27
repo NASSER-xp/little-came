@@ -6,6 +6,7 @@ extends Control
 @onready var settings_close_button: Button = $SettingsMenu/CloseButton
 @onready var resolution_option: OptionButton = $SettingsMenu/ResolutionOption
 @onready var apply_button: Button = $SettingsMenu/ApplyButton
+@onready var exit: Button = $Exit
 
 const SETTINGS_PATH := "user://settings.cfg"
 const RESOLUTIONS: Array[Vector2i] = [
@@ -30,9 +31,19 @@ func _on_play_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	settings_menu.visible = true
+	play_button.visible = false
+	settings_button.visible = false
+	exit.visible = false
+	
+	
+	
 
 func _on_settings_close_pressed() -> void:
 	settings_menu.visible = false
+	play_button.visible = true
+	settings_button.visible = true
+	exit.visible = true
+
 
 func _setup_resolution_options() -> void:
 	resolution_option.clear()
@@ -88,3 +99,7 @@ func _load_and_apply_resolution() -> void:
 			pending_resolution_index = i
 			resolution_option.select(pending_resolution_index)
 			return
+
+
+func _on_Exit_pressed() -> void:
+	get_tree().quit()
