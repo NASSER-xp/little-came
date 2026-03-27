@@ -1,0 +1,150 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkdpwlbrsl3ws"]
+
+[ext_resource type="Script" uid="uid://d1nnypfbu6tam" path="res://scripts/main_menu.gd" id="1_vrdfc"]
+[ext_resource type="Texture2D" uid="uid://bde7xhomcy7b8" path="res://assets/little cam.png" id="2_mnow5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = 4.0
+offset_right = -10.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrdfc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -81.0
+offset_right = 182.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+action_mode = 0
+text = "Play"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+action_mode = 0
+text = "Settings"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -349.0
+offset_top = 135.0
+offset_right = 456.0
+offset_bottom = 333.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 145
+text = "Little Cam"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="LittleCam" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(158, 5)
+scale = Vector2(0.401856, 0.505246)
+texture = ExtResource("2_mnow5")
+centered = false
+
+[node name="SettingsMenu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -160.0
+offset_right = 220.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = -12.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="ResolutionLabel" type="Label" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 70.0
+offset_right = -16.0
+offset_bottom = 95.0
+grow_horizontal = 2
+text = "Resolution"
+
+[node name="ResolutionOption" type="OptionButton" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 100.0
+offset_right = -16.0
+offset_bottom = 135.0
+grow_horizontal = 2
+
+[node name="ApplyButton" type="Button" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 353.0
+offset_top = 277.0
+offset_right = -13.0
+offset_bottom = 312.0
+grow_horizontal = 2
+text = "Apply"
+
+[node name="CloseButton" type="Button" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 168.0
+offset_top = -158.0
+offset_right = 218.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Close"
+
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
