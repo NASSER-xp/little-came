@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://da4i2oahqhk3u"]
+[gd_scene load_steps=3 format=3 uid="uid://da4i2oahqhk3u"]
 
-[ext_resource type="Script" path="res://scripts/in_game_menu.gd" id="1_43v21"]
+[ext_resource type="Script" uid="uid://6bjdyfxlxy8s" path="res://scripts/in_game_menu.gd" id="1_43v21"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oe7et"]
 
 [node name="InGameMenu" type="CanvasLayer"]
 process_mode = 3
@@ -25,28 +27,35 @@ offset_top = 10.0
 offset_right = -10.0
 offset_bottom = 41.0
 grow_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oe7et")
 text = "Menu"
 
 [node name="MenuPanel" type="Panel" parent="Control"]
-visible = false
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -60.0
-offset_right = 100.0
-offset_bottom = 60.0
+offset_left = -148.0
+offset_top = -97.0
+offset_right = 148.0
+offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MenuPanel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -38.0
+offset_right = 83.0
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1

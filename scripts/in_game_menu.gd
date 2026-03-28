@@ -7,6 +7,7 @@ extends Control
 
 func _ready() -> void:
 	menu_panel.visible = false
+	menu_button.focus_mode = Control.FOCUS_NONE
 	menu_button.pressed.connect(_on_menu_button_pressed)
 	restart_button.pressed.connect(_on_restart_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
@@ -22,3 +23,7 @@ func _on_restart_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scene/control.tscn")
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		_on_menu_button_pressed()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bkdpwlbrsl3ws"]
+[gd_scene load_steps=19 format=3 uid="uid://bkdpwlbrsl3ws"]
 
 [ext_resource type="Script" uid="uid://d1nnypfbu6tam" path="res://scripts/main_menu.gd" id="1_vrdfc"]
 [ext_resource type="Texture2D" uid="uid://dutgtlcl81smr" path="res://assets/Capture d’écran 2026-03-27 212025.jpg" id="2_f676y"]
@@ -86,6 +86,8 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8g54p"]
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -100,6 +102,7 @@ grow_vertical = 2
 script = ExtResource("1_vrdfc")
 
 [node name="Panel2" type="Panel" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -282,5 +285,19 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_p0pm5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ci40l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1pgdv")
 text = "X"
+
+[node name="CheckBox" type="CheckBox" parent="SettingsMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -15.5
+offset_right = 126.0
+offset_bottom = 15.5
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8g54p")
+text = "Fullscreen"
 
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
