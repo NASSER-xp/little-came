@@ -1,0 +1,267 @@
+[gd_scene load_steps=20 format=3 uid="uid://dksx4kvaxywus"]
+
+[ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
+[ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
+[ext_resource type="PackedScene" uid="uid://dv8r5ohyob463" path="res://scene/coin_collectable.tscn" id="3_33cqm"]
+[ext_resource type="Texture2D" uid="uid://hg7ifiogb2ab" path="res://assets/pixellab-2d-flat-battery---1751583046897.png" id="4_nluny"]
+[ext_resource type="Script" uid="uid://cvick7ctdpnur" path="res://scripts/game_manager.gd" id="4_xwcet"]
+[ext_resource type="PackedScene" uid="uid://bpk2vhiae1s6d" path="res://scene/Double Battery.tscn" id="5_xe55d"]
+[ext_resource type="PackedScene" uid="uid://d2bwchdnl0e0n" path="res://scene/door.tscn" id="6_xlg7c"]
+[ext_resource type="PackedScene" path="res://scene/in_game_menu.tscn" id="7_menu"]
+[ext_resource type="PackedScene" uid="uid://bqj2bwchdnl0f" path="res://scene/fake_door.tscn" id="8_fake"]
+[ext_resource type="PackedScene" uid="uid://b63kr0uerhnmb" path="res://scene/kill_tile.tscn" id="9_kill"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_33cqm"]
+load_path = "res://.godot/imported/all assests G.png-2d6ff1798c1b12ef33d098f58ead0033.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
+texture = SubResource("CompressedTexture2D_33cqm")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+7:0/0 = 0
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:3/0 = 0
+6:3/0 = 0
+6:2/0 = 0
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:3/0 = 0
+4:3/size_in_atlas = Vector2i(1, 2)
+4:3/0 = 0
+4:2/0 = 0
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+1:5/0 = 0
+1:4/0 = 0
+1:3/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+0:5/0 = 0
+0:4/0 = 0
+0:3/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:6/0 = 0
+2:5/0 = 0
+3:4/0 = 0
+3:5/0 = 0
+3:6/0 = 0
+5:4/0 = 0
+7:4/0 = 0
+5:5/0 = 0
+4:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xlg7c"]
+texture = ExtResource("2_p1ry8")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+5:0/0 = 0
+4:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+7:1/0 = 0
+7:2/0 = 0
+6:2/0 = 0
+5:2/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+4:4/0 = 0
+3:4/0 = 0
+2:4/0 = 0
+1:4/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p1ry8"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_xwcet")
+sources/1 = SubResource("TileSetAtlasSource_xlg7c")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nluny"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnfv4"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.803922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnov8"]
+bg_color = Color(0.0707517, 0.692121, 0.384202, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dash"]
+bg_color = Color(0.180392, 0.443137, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlg7c"]
+size = Vector2(1257, 6)
+
+[node name="Level12" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_p1ry8")
+format = 2
+layer_0/tile_data = PackedInt32Array(1048576, 393216, 0, 1048577, 393216, 0, 1048578, 393216, 0, 1048579, 393216, 0, 1048580, 393216, 0, 1048581, 393216, 0, 1114108, 393216, 0, 1114109, 393216, 0, 1114110, 393216, 0, 1114111, 393216, 0, -458771, 393216, 0, -393235, 393216, 0, -327699, 393216, 0, -262163, 393216, 0, -196627, 393216, 0, -131091, 393216, 0, -65555, 393216, 0, -19, 393216, 0, 65517, 393216, 0, 131053, 393216, 0, 196589, 393216, 0, 262125, 393216, 0, 327661, 393216, 0, 393197, 393216, 0, 458733, 393216, 0, 524269, 393216, 0, 589805, 393216, 0, 655341, 393216, 0, 720877, 327680, 2, 786413, 327680, 2, 851949, 327680, 2, 917485, 327680, 2, 983021, 327680, 2, 1048557, 327680, 2, 1114093, 327680, 2, 1179629, 327680, 2, 1245165, 327680, 2, 1310701, 327680, 2, 1376237, 327680, 2, 1441773, 327680, 2, 1507309, 327680, 2, 1572845, 327680, 2, 1638381, 327680, 2, 1703917, 327680, 2, 1769453, 327680, 2, 1834989, 327680, 2, 1900525, 327680, 2, 1966061, 327680, 2, 2031597, 327680, 2, 2097133, 327680, 2, 2162669, 393216, 0, 2228205, 393216, 0, 2293741, 393216, 0, 2359277, 393216, 0, 2424813, 393216, 0, 2490349, 393216, 0, 2555885, 393216, 0, 2621421, 393216, 0, 2686957, 393216, 0, 2752493, 393216, 0, -458770, 393216, 0, -393234, 393216, 0, -327698, 393216, 0, -262162, 393216, 0, -196626, 393216, 0, -131090, 393216, 0, -65554, 393216, 0, -18, 393216, 0, 65518, 393216, 0, 131054, 393216, 0, 196590, 393216, 0, 262126, 393216, 0, 327662, 393216, 0, 393198, 393216, 0, 458734, 393216, 0, 524270, 393216, 0, 589806, 393216, 0, 655342, 393216, 0, 720878, 327680, 2, 786414, 327680, 2, 851950, 327680, 2, 917486, 327680, 2, 983022, 327680, 2, 1048558, 327680, 2, 1114094, 327680, 2, 1179630, 327680, 2, 1245166, 327680, 2, 1310702, 327680, 2, 1376238, 327680, 2, 1441774, 327680, 2, 1507310, 327680, 2, 1572846, 327680, 2, 1638382, 327680, 2, 1703918, 327680, 2, 1769454, 327680, 2, 1834990, 327680, 2, 1900526, 327680, 2, 1966062, 327680, 2, 2031598, 327680, 2, 2097134, 327680, 2, 2162670, 393216, 0, 2228206, 393216, 0, 2293742, 393216, 0, 2359278, 393216, 0, 2424814, 393216, 0, 2490350, 393216, 0, 2555886, 393216, 0, 2621422, 393216, 0, 2686958, 393216, 0, 2752494, 393216, 0)
+
+[node name="gameManager" type="Node" parent="."]
+script = ExtResource("4_xwcet")
+
+[node name="ui" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Panel2" type="Panel" parent="ui"]
+offset_left = 7.0
+offset_top = 490.0
+offset_right = 65.0
+offset_bottom = 616.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nluny")
+
+[node name="Pixellab-2d-flat-battery---1751583046897" type="Sprite2D" parent="ui/Panel2"]
+texture_filter = 1
+position = Vector2(17, 16)
+rotation = 1.57555
+scale = Vector2(0.689843, 0.522961)
+texture = ExtResource("4_nluny")
+
+[node name="ProgressBar" type="ProgressBar" parent="ui/Panel2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 35.0
+offset_right = 22.0
+offset_bottom = 150.0
+theme_override_constants/outline_size = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_lnfv4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lnov8")
+max_value = 300.0
+step = 1.0
+value = 100.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="DashBar" type="ProgressBar" parent="ui/Panel2"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 35.0
+offset_right = 52.0
+offset_bottom = 150.0
+theme_override_constants/outline_size = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_lnfv4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dash")
+step = 1.0
+value = 100.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="InfiniteBatteryButton" type="Button" parent="ui"]
+visible = false
+offset_left = 62.0
+offset_top = 576.0
+offset_right = 253.0
+offset_bottom = 607.0
+toggle_mode = true
+text = "Infinity Battery: OFF"
+
+[node name="DebugButton" type="Button" parent="ui"]
+offset_left = 62.0
+offset_top = 609.0
+offset_right = 120.0
+offset_bottom = 640.0
+toggle_mode = true
+text = "Debug"
+
+[node name="collectables" type="Node" parent="."]
+
+[node name="coin1" parent="collectables" instance=ExtResource("3_33cqm")]
+position = Vector2(311, 400)
+
+[node name="coin4" parent="collectables" instance=ExtResource("3_33cqm")]
+position = Vector2(485, 400)
+
+[node name="coin5" parent="collectables" instance=ExtResource("3_33cqm")]
+position = Vector2(793, 400)
+
+[node name="coin6" parent="collectables" instance=ExtResource("3_33cqm")]
+position = Vector2(1096, 352)
+
+[node name="coin7" parent="collectables" instance=ExtResource("3_33cqm")]
+position = Vector2(1370, 304)
+
+[node name="Double Battery" parent="collectables" instance=ExtResource("5_xe55d")]
+position = Vector2(189, 400)
+
+[node name="Node2D" parent="." instance=ExtResource("6_xlg7c")]
+position = Vector2(-175, 392)
+next_scene_path = "res://scene/level13.tscn"
+
+[node name="FakeDoor" parent="." instance=ExtResource("8_fake")]
+position = Vector2(181, 424)
+
+[node name="InGameMenu" parent="." instance=ExtResource("7_menu")]
+
+[node name="Void" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Void"]
+position = Vector2(1250, 585)
+shape = SubResource("RectangleShape2D_xlg7c")
+
+[node name="KillTile" parent="." instance=ExtResource("9_kill")]
+position = Vector2(86, 392)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_dbls1")]
+position = Vector2(-13, 398)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(3, 8)
+offset = Vector2(10, -40)
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true

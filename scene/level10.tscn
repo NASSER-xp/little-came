@@ -241,7 +241,7 @@ position = Vector2(189, 400)
 
 [node name="Node2D" parent="." instance=ExtResource("6_xlg7c")]
 position = Vector2(-175, 392)
-next_scene_path = "res://scene/control.tscn"
+next_scene_path = "res://scene/level11.tscn"
 
 [node name="FakeDoor" parent="." instance=ExtResource("8_fake")]
 position = Vector2(181, 424)

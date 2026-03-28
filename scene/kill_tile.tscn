@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bhb5qddvpp1au" path="res://assets/kill tile.png" id="2_texture"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kill"]
-size = Vector2(16, 3)
+size = Vector2(16, 5)
 
 [node name="KillTile" type="Area2D"]
 script = ExtResource("1_script")
@@ -14,5 +14,5 @@ texture_filter = 1
 texture = ExtResource("2_texture")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6.5)
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_kill")
