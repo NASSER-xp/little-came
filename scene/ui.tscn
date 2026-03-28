@@ -1,0 +1,139 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk7sje1xh1t6k"]
+
+[ext_resource type="Texture2D" uid="uid://hg7ifiogb2ab" path="res://assets/pixellab-2d-flat-battery---1751583046897.png" id="1_onfsl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xlg7c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33cqm"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.803922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2484, 0.2484, 0.2484, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlg7c"]
+bg_color = Color(0.0707517, 0.692121, 0.384202, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.247059, 0.247059, 0.247059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onfsl"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.803922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2484, 0.2484, 0.2484, 1)
+expand_margin_top = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dash"]
+bg_color = Color(0.180392, 0.443137, 1, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.247059, 0.247059, 0.247059, 1)
+
+[node name="ui" type="CanvasLayer"]
+layer = 2
+
+[node name="InfiniteBatteryButton" type="Button" parent="."]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 62.0
+offset_top = -72.0
+offset_right = 253.0
+offset_bottom = -41.0
+grow_vertical = 0
+toggle_mode = true
+text = "Infinity Battery: OFF"
+
+[node name="DebugButton" type="Button" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -30.0
+offset_right = 55.0
+offset_bottom = -4.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 13
+toggle_mode = true
+text = "Debug"
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -158.0
+offset_right = 65.0
+offset_bottom = -32.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xlg7c")
+
+[node name="Pixellab-2d-flat-battery---1751583046897" type="Sprite2D" parent="Panel2"]
+texture_filter = 1
+position = Vector2(13, -10)
+rotation = 1.57555
+scale = Vector2(0.689843, 0.522961)
+texture = ExtResource("1_onfsl")
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.172
+anchor_top = 1.255
+anchor_right = 0.172
+anchor_bottom = 1.255
+offset_left = -9.976
+offset_top = -147.13
+offset_right = 10.024
+offset_bottom = -32.13
+grow_vertical = 0
+theme_override_constants/outline_size = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_33cqm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xlg7c")
+max_value = 300.0
+step = 1.0
+value = 100.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="DashBar" type="ProgressBar" parent="Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.603
+anchor_top = 1.015
+anchor_right = 0.603
+anchor_bottom = 1.015
+offset_left = -9.974
+offset_top = -115.89
+offset_right = 10.026
+offset_bottom = -1.89001
+grow_vertical = 0
+theme_override_constants/outline_size = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_onfsl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dash")
+step = 1.0
+value = 100.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="TimerLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 20.0
+offset_right = 50.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "00:00.00"
+horizontal_alignment = 1

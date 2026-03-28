@@ -6,7 +6,7 @@ extends Node
 @onready var dash_bar: ProgressBar = get_node_or_null("../ui/Panel2/DashBar")
 @onready var infinite_button: Button = get_node_or_null("../ui/InfiniteBatteryButton")
 @onready var debug_button: Button = get_node_or_null("../ui/DebugButton")
-
+@onready var timer_label: Label = get_node_or_null("../ui/TimerLabel")
 
 
 func _ready():
@@ -62,3 +62,9 @@ func _update_infinite_button_text() -> void:
 	if not infinite_button or not player:
 		return
 	infinite_button.text = "Infinity Battery: ON" if player.infinite_battery else "Infinity Battery: OFF"
+
+func _process(delta: float) -> void:
+	if timer_label:
+		var t = GlobalState.time_elapsed
+		var string = "%02d:%02d.%02d" % [int(t / 60.0), int(t) % 60, int((t - int(t)) * 100)]
+		timer_label.text = string

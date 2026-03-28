@@ -6,6 +6,7 @@ extends Control
 @onready var settings_close_button: Button = $SettingsMenu/CloseButton
 @onready var resolution_option: OptionButton = $SettingsMenu/ResolutionOption
 @onready var apply_button: Button = $SettingsMenu/ApplyButton
+@onready var levels_button: Button = $Levels
 @onready var exit: Button = $Exit
 
 const SETTINGS_PATH := "user://settings.cfg"
@@ -20,11 +21,15 @@ var pending_resolution_index: int = 0
 func _ready() -> void:
 	play_button.pressed.connect(_on_play_pressed)
 	settings_button.pressed.connect(_on_settings_pressed)
+	levels_button.pressed.connect(_on_levels_pressed)
 	settings_close_button.pressed.connect(_on_settings_close_pressed)
 	resolution_option.item_selected.connect(_on_resolution_selected)
 	apply_button.pressed.connect(_on_apply_pressed)
+	fullscreen_checkbox.toggled.connect(_on_fullscreen_toggled)
 	_setup_resolution_options()
 	_load_and_apply_resolution()
+	
+	fullscreen_checkbox.button_pressed = (DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/game.tscn")
@@ -33,6 +38,7 @@ func _on_settings_pressed() -> void:
 	settings_menu.visible = true
 	play_button.visible = false
 	settings_button.visible = false
+	levels_button.visible = false
 	exit.visible = false
 	
 	
@@ -42,7 +48,11 @@ func _on_settings_close_pressed() -> void:
 	settings_menu.visible = false
 	play_button.visible = true
 	settings_button.visible = true
+	levels_button.visible = true
 	exit.visible = true
+
+func _on_levels_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/levels_menu.tscn")
 
 
 func _setup_resolution_options() -> void:
@@ -75,9 +85,14 @@ func _apply_resolution(res: Vector2i, save: bool) -> void:
 			_save_resolution(res)
 		return
 
-	# If the game is fullscreen/maximized, resizing may appear to do nothing.
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	DisplayServer.window_set_size(res)
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		# Just change the internal resolution for upscaling in fullscreen
+		get_window().content_scale_size = res
+	else:
+		# Change actual window size
+		DisplayServer.window_set_size(res)
+		get_window().content_scale_size = res
+
 	if save:
 		_save_resolution(res)
 
@@ -100,6 +115,12 @@ func _load_and_apply_resolution() -> void:
 			resolution_option.select(pending_resolution_index)
 			return
 
+
+func _on_fullscreen_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _on_Exit_pressed() -> void:
 	get_tree().quit()
