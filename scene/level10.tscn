@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bflpi0r3pqx7v"]
+[gd_scene load_steps=20 format=3 uid="uid://bflpi0r3pqx7v"]
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d2bwchdnl0e0n" path="res://scene/door.tscn" id="6_xlg7c"]
 [ext_resource type="PackedScene" uid="uid://da4i2oahqhk3u" path="res://scene/in_game_menu.tscn" id="7_menu"]
 [ext_resource type="PackedScene" uid="uid://bqj2bwchdnl0f" path="res://scene/fake_door.tscn" id="8_fake"]
+[ext_resource type="PackedScene" uid="uid://b63kr0uerhnmb" path="res://scene/kill_tile.tscn" id="9_kill"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_33cqm"]
 load_path = "res://.godot/imported/all assests G.png-2d6ff1798c1b12ef33d098f58ead0033.ctex"
@@ -166,7 +167,7 @@ position = Vector2(189, 400)
 
 [node name="Node2D" parent="." instance=ExtResource("6_xlg7c")]
 position = Vector2(-175, 392)
-next_scene_path = "res://scene/control.tscn"
+next_scene_path = "res://scene/level11.tscn"
 
 [node name="FakeDoor" parent="." instance=ExtResource("8_fake")]
 position = Vector2(181, 424)
@@ -187,6 +188,9 @@ position = Vector2(1449, 232)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Void"]
 position = Vector2(1250, 585)
 shape = SubResource("RectangleShape2D_xlg7c")
+
+[node name="KillTile" parent="." instance=ExtResource("9_kill")]
+position = Vector2(86, 392)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_dbls1")]
 position = Vector2(-13, 398)
