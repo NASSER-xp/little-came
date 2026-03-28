@@ -1,9 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnkd52gtjcpxx"]
+[gd_scene load_steps=13 format=3 uid="uid://begpjpl81e8si"]
 
-[ext_resource type="Script" uid="uid://mt04b8yfrcdv" path="res://scripts/levels_menu.gd" id="1_levels"]
+[ext_resource type="Script" path="res://scripts/levels_menu.gd" id="1_levels"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
 bg_color = Color(0.099986, 0.099986, 0.099986, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ut20d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ut20d"]
+bg_color = Color(0.28485, 0.28485, 0.28485, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lp1q5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reset_hover"]
 bg_color = Color(0.9, 0.1, 0.1, 1)
@@ -30,6 +41,17 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdiek"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdiek"]
+bg_color = Color(0.896694, 0.126196, 0.122001, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiw82"]
+bg_color = Color(0.678327, 0.0722666, 0.0738869, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp1q5"]
+bg_color = Color(0.8, 0.0980392, 0.0980392, 1)
 
 [node name="LevelsMenu" type="Control"]
 layout_mode = 3
@@ -86,11 +108,13 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = -80.0
-offset_right = 150.0
-offset_bottom = -40.0
+offset_left = 15.0
+offset_top = -63.0
+offset_right = 161.0
+offset_bottom = -15.0
 grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ut20d")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ut20d")
 text = "Back"
 
 [node name="ResetButton" type="Button" parent="."]
@@ -100,12 +124,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -80.0
-offset_right = -50.0
-offset_bottom = -40.0
+offset_left = -172.0
+offset_top = -59.0
+offset_right = -22.0
+offset_bottom = -19.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lp1q5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_reset_hover")
 theme_override_styles/normal = SubResource("StyleBoxFlat_reset_normal")
 text = "Reset Progress"
@@ -147,6 +172,10 @@ offset_top = -50.0
 offset_right = 140.0
 offset_bottom = -20.0
 grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wdiek")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wdiek")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiw82")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lp1q5")
 text = "Yes"
 
 [node name="CancelReset" type="Button" parent="Confirmation"]
