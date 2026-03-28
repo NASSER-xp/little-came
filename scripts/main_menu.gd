@@ -25,8 +25,11 @@ func _ready() -> void:
 	settings_close_button.pressed.connect(_on_settings_close_pressed)
 	resolution_option.item_selected.connect(_on_resolution_selected)
 	apply_button.pressed.connect(_on_apply_pressed)
+	fullscreen_checkbox.toggled.connect(_on_fullscreen_toggled)
 	_setup_resolution_options()
 	_load_and_apply_resolution()
+	
+	fullscreen_checkbox.button_pressed = (DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/game.tscn")
@@ -82,9 +85,14 @@ func _apply_resolution(res: Vector2i, save: bool) -> void:
 			_save_resolution(res)
 		return
 
-	# If the game is fullscreen/maximized, resizing may appear to do nothing.
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	DisplayServer.window_set_size(res)
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		# Just change the internal resolution for upscaling in fullscreen
+		get_window().content_scale_size = res
+	else:
+		# Change actual window size
+		DisplayServer.window_set_size(res)
+		get_window().content_scale_size = res
+
 	if save:
 		_save_resolution(res)
 
@@ -107,6 +115,12 @@ func _load_and_apply_resolution() -> void:
 			resolution_option.select(pending_resolution_index)
 			return
 
+
+func _on_fullscreen_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _on_Exit_pressed() -> void:
 	get_tree().quit()
