@@ -6,6 +6,7 @@ extends Control
 @onready var settings_close_button: Button = $SettingsMenu/CloseButton
 @onready var resolution_option: OptionButton = $SettingsMenu/ResolutionOption
 @onready var apply_button: Button = $SettingsMenu/ApplyButton
+@onready var levels_button: Button = $Levels
 @onready var exit: Button = $Exit
 
 const SETTINGS_PATH := "user://settings.cfg"
@@ -20,6 +21,7 @@ var pending_resolution_index: int = 0
 func _ready() -> void:
 	play_button.pressed.connect(_on_play_pressed)
 	settings_button.pressed.connect(_on_settings_pressed)
+	levels_button.pressed.connect(_on_levels_pressed)
 	settings_close_button.pressed.connect(_on_settings_close_pressed)
 	resolution_option.item_selected.connect(_on_resolution_selected)
 	apply_button.pressed.connect(_on_apply_pressed)
@@ -33,6 +35,7 @@ func _on_settings_pressed() -> void:
 	settings_menu.visible = true
 	play_button.visible = false
 	settings_button.visible = false
+	levels_button.visible = false
 	exit.visible = false
 	
 	
@@ -42,7 +45,11 @@ func _on_settings_close_pressed() -> void:
 	settings_menu.visible = false
 	play_button.visible = true
 	settings_button.visible = true
+	levels_button.visible = true
 	exit.visible = true
+
+func _on_levels_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/levels_menu.tscn")
 
 
 func _setup_resolution_options() -> void:
