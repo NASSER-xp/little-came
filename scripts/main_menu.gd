@@ -6,6 +6,7 @@ extends Control
 @onready var settings_close_button: Button = $SettingsMenu/CloseButton
 @onready var resolution_option: OptionButton = $SettingsMenu/ResolutionOption
 @onready var apply_button: Button = $SettingsMenu/ApplyButton
+@onready var fullscreen_checkbox: CheckBox = $SettingsMenu/CheckBox
 @onready var levels_button: Button = $Levels
 @onready var exit: Button = $Exit
 

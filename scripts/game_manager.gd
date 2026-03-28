@@ -63,8 +63,8 @@ func _update_infinite_button_text() -> void:
 		return
 	infinite_button.text = "Infinity Battery: ON" if player.infinite_battery else "Infinity Battery: OFF"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if timer_label:
 		var t = GlobalState.time_elapsed
-		var string = "%02d:%02d.%02d" % [int(t / 60.0), int(t) % 60, int((t - int(t)) * 100)]
-		timer_label.text = string
+		var time_str = "%02d:%02d.%02d" % [int(t / 60.0), int(t) % 60, int((t - int(t)) * 100)]
+		timer_label.text = time_str

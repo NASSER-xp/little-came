@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
 [ext_resource type="PackedScene" path="res://scene/coin_collectable.tscn" id="3_33cqm"]
 [ext_resource type="Script" uid="uid://cvick7ctdpnur" path="res://scripts/game_manager.gd" id="4_xwcet"]
-[ext_resource type="PackedScene" uid="uid://dk7sje1xh1t6k" path="res://scene/ui.tscn" id="5_qpk70"]
+[ext_resource type="PackedScene" path="res://scene/ui.tscn" id="5_qpk70"]
 [ext_resource type="PackedScene" uid="uid://d2bwchdnl0e0n" path="res://scene/door.tscn" id="6_xlg7c"]
 [ext_resource type="PackedScene" uid="uid://da4i2oahqhk3u" path="res://scene/in_game_menu.tscn" id="7_menu"]
 
