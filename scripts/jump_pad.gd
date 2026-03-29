@@ -7,4 +7,6 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		body.velocity.y = jump_force
+		# Use Vector2.UP rotated by the jump pad's global rotation to determine push direction
+		var push_direction = Vector2.UP.rotated(global_rotation)
+		body.velocity = push_direction * abs(jump_force)

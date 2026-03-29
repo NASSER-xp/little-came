@@ -9,6 +9,7 @@ const DASH_SPEED = 200.0
 const DASH_DURATION = 0.3
 const DASH_STAMINA_COST = 70
 const DASH_STAMINA_REGEN = 5.0
+const ACCELERATION = 600.0  # تسارع الحركة الأفقية
 
 @export var max_energy: float = 300.0
 @export var start_energy: float = 300.0
@@ -61,7 +62,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = (1 if not sprite_2d.flip_h else -1) * DASH_SPEED
 		velocity.y = 0
 	elif can_use_energy and direction != 0:
-		velocity.x = direction * SPEED
+		# Use move_toward with ACCELERATION to allow external forces to linger
+		velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION * delta)
 		sprite_2d.flip_h = direction < 0
 	else:
 		# استخدم ZERO_ENERGY_FRICTION عند نفاد الطاقة، وإلا استخدم FRICTION العادي

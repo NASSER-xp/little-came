@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://ddcplmp7ef20y" path="res://scene/player.tscn" id="1_dbls1"]
 [ext_resource type="Texture2D" uid="uid://comrnhjw7tqry" path="res://assets/all assests G.png" id="2_p1ry8"]
-[ext_resource type="PackedScene" path="res://scene/coin_collectable.tscn" id="3_33cqm"]
-[ext_resource type="PackedScene" path="res://scene/ui.tscn" id="3_ev37k"]
+[ext_resource type="PackedScene" uid="uid://dv8r5ohyob463" path="res://scene/coin_collectable.tscn" id="3_33cqm"]
+[ext_resource type="PackedScene" uid="uid://dk7sje1xh1t6k" path="res://scene/ui.tscn" id="3_ev37k"]
 [ext_resource type="Script" uid="uid://cvick7ctdpnur" path="res://scripts/game_manager.gd" id="4_xwcet"]
 [ext_resource type="PackedScene" uid="uid://bpk2vhiae1s6d" path="res://scene/Double Battery.tscn" id="5_xe55d"]
 [ext_resource type="PackedScene" uid="uid://d2bwchdnl0e0n" path="res://scene/door.tscn" id="6_xlg7c"]
 [ext_resource type="PackedScene" uid="uid://da4i2oahqhk3u" path="res://scene/in_game_menu.tscn" id="7_menu"]
 [ext_resource type="PackedScene" uid="uid://bqj2bwchdnl0f" path="res://scene/fake_door.tscn" id="8_fake"]
-[ext_resource type="PackedScene" path="res://scene/kill_tile.tscn" id="9_kill"]
+[ext_resource type="PackedScene" uid="uid://b63kr0uerhnmb" path="res://scene/kill_tile.tscn" id="9_kill"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_33cqm"]
 load_path = "res://.godot/imported/all assests G.png-2d6ff1798c1b12ef33d098f58ead0033.ctex"
@@ -133,11 +133,11 @@ size = Vector2(2438, 14)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ev37k"]
 
-[sub_resource type="Gradient" id="Gradient_bs2jq"]
+[sub_resource type="Gradient" id="Gradient_ev37k"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_77pko"]
-gradient = SubResource("Gradient_bs2jq")
+gradient = SubResource("Gradient_ev37k")
 fill_from = Vector2(0.541284, 0.197248)
 fill_to = Vector2(0.545872, 0.633027)
 
