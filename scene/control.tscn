@@ -107,6 +107,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -4.0
+offset_right = 10.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8g54p")
@@ -301,5 +305,17 @@ offset_bottom = 15.5
 grow_vertical = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8g54p")
 text = "Fullscreen"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -29.0
+offset_right = 115.0
+offset_bottom = -6.0
+grow_vertical = 0
+text = "v 0.0.5 alpha"
 
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
