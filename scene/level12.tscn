@@ -228,8 +228,8 @@ position_smoothing_enabled = true
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 texture_filter = 1
-position = Vector2(566, 579)
-scale = Vector2(2464, 760)
+position = Vector2(566, 631)
+scale = Vector2(2464, 864)
 mesh = SubResource("QuadMesh_ev37k")
 texture = SubResource("GradientTexture2D_77pko")
 
